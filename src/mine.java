@@ -40,7 +40,7 @@ public class mine {
 				}
 				counter++;
 			}
-			System.out.println("\n1000 Urls rerieved.");
+			System.out.println("\n1000 Urls retrieved.");
 			
 		} catch (IOException e) {
 			e.printStackTrace();
