@@ -29,6 +29,7 @@ public class mine {
 				}
 				if(doc==null)
 				{
+					counter++;
 					continue;
 				}
 				Elements elements = doc.select("a");
