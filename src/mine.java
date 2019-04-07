@@ -12,16 +12,27 @@ public class mine {
 		int counter = 0;
 		String mainurl = "https://www.visual-meta.com/";
 		links.add(mainurl);
-		try {
+		
 			while(links.size() <= 999)
 			{
 				String currenturl = links.get(counter);
 				System.out.println("===============");
 				System.out.println("current url : " + currenturl);
 				System.out.println("===============");
+				Document doc = null;
+				try {	
+				doc = Jsoup.connect(currenturl).get();
 				
-				Document doc = Jsoup.connect(currenturl).get();
+				} catch (IOException e) {
+					e.printStackTrace();
+					System.out.println("invalid url");
+				}
+				if(doc==null)
+				{
+					continue;
+				}
 				Elements elements = doc.select("a");
+				
 				int size = elements.size();
 				
 				for(int i=1 ; i<size ; i++)
@@ -42,9 +53,6 @@ public class mine {
 			}
 			System.out.println("\n1000 Urls retrieved.");
 			
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("invalid url");
-		}
+		
 	}
 }
