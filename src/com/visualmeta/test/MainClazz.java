@@ -1,11 +1,11 @@
+package com.visualmeta.test;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class mine {
+public class MainClazz {
 
 	public static void main(String[] args) {
 		ArrayList<String> links = new ArrayList<String>();
@@ -29,7 +29,7 @@ public class mine {
 				}
 				if(doc==null)
 				{
-					counter++;
+				    counter++;
 					continue;
 				}
 				Elements elements = doc.select("a");
@@ -51,6 +51,7 @@ public class mine {
 					}		
 				}
 				counter++;
+				System.out.println(counter);
 			}
 			System.out.println("\n1000 Urls retrieved.");
 			
